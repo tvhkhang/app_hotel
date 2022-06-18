@@ -15,12 +15,14 @@ class LoginPage extends StatefulWidget
 class _LoginPage extends State<LoginPage> {
   @override
   bool _passwordVisible=true;
+  TextEditingController nameController = TextEditingController();
+  TextEditingController passController = TextEditingController();
   void initState() {
     _passwordVisible = true;
+
   }
   Widget build(BuildContext context) {
-    TextEditingController nameController = TextEditingController();
-    TextEditingController passController = TextEditingController();
+
 
     return Scaffold(
       backgroundColor: const Color(0xffE5E5E5),
@@ -73,7 +75,8 @@ class _LoginPage extends State<LoginPage> {
                     labelStyle: MyStyle.styletext,
                     suffixIcon: IconButton(
                       icon: Image.asset(
-                        "assets/image/eye.png",
+                        !_passwordVisible?
+                        "assets/image/eye.png":'assets/image/eye-slash.png',
                         height: 24,
                         width: 24,
                       ),

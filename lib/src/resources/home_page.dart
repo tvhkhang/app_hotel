@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/constants/colors.dart';
 import 'package:myapp/constants/styles.dart';
 import 'package:myapp/constants/users.dart';
+import 'package:myapp/src/resources/HotelDetail.dart';
 import 'package:myapp/src/resources/HotelDetailAddRoom.dart';
 import 'package:myapp/src/resources/LoginPage.dart';
 
@@ -57,7 +58,7 @@ class _HomePage extends State<HomePage> {
                 (BuildContext context, int index) =>
                 Card(
                   child: InkWell(
-                    onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()))},
+                    onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (context)=>HotelDetail()))},
                     child: Container(
                       decoration:
                       BoxDecoration(borderRadius: BorderRadius.circular(16.0)),

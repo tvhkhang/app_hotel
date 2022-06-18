@@ -56,7 +56,10 @@ class _HotelDetail extends State<HotelDetail> {
           ),
           SliverToBoxAdapter(
             child: Container(
-              padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
+              padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(32),topRight: Radius.circular(32)),
+              ),
               child: Column(
                 children: [
                   SizedBox(
@@ -165,28 +168,36 @@ class _HotelDetail extends State<HotelDetail> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 28,),
-                  Row(
+                  SizedBox(
+                    height: 28,
+                  ),
+                  Stack(
                     children: [
-                      Text(
-                        "Reviews",
-                        style: TextStyle(
-                            fontFamily: 'poppins',
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: MyColor.blue),
+                      Container(
+                        child: Text(
+                          "Reviews",
+                          style: TextStyle(
+                              fontFamily: 'poppins',
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: MyColor.blue),
+                        ),
+                        alignment: Alignment.topLeft,
                       ),
-                      TextButton(onPressed: (){}, child: Text(
-                        "See more",
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
-
-                            fontFamily: 'poppins',
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: MyColor.black),
-                      ),
-
+                      Container(
+                        alignment: Alignment.topRight,
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "See more",
+                            style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                fontFamily: 'poppins',
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: MyColor.black),
+                          ),
+                        ),
                       )
                     ],
                   ),
@@ -194,7 +205,6 @@ class _HotelDetail extends State<HotelDetail> {
               ),
             ),
           ),
-          
         ],
       ),
     );

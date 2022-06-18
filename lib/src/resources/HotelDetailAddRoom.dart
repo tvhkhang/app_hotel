@@ -101,7 +101,8 @@ class _AddRoom extends State<AddRoom> {
       children: [
         Container(
           padding: EdgeInsets.only(left: 32,bottom: 34,top: 16,right: 16),
-          child: ElevatedButton(
+          child: RaisedButton(
+            color: MyColor.white_1,
             child: Text('Cancel',
             style: TextStyle(
               color: MyColor.grey
