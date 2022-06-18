@@ -66,4 +66,10 @@ class MyStyle {
       fontSize: 14,
       fontStyle: FontStyle.normal,
       color: MyColor.grey);
+  static final StyleButton= TextButton.styleFrom(
+      primary:  MyColor.white_1,
+      backgroundColor: MyColor.blue,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8.0),
+      ));
 }

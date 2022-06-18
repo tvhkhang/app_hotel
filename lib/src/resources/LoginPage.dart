@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/constants/paddings.dart';
 import 'package:myapp/constants/styles.dart';
-import 'package:myapp/src/resources/HotelDetail.dart';
 import 'package:myapp/src/resources/home_page.dart';
 import 'package:myapp/widgets/logo.dart';
 import 'package:myapp/constants/colors.dart';
@@ -13,28 +13,31 @@ class LoginPage extends StatefulWidget
   }
 }
 class _LoginPage extends State<LoginPage> {
-  @override
+
   bool _passwordVisible=true;
   TextEditingController nameController = TextEditingController();
   TextEditingController passController = TextEditingController();
+  @override
   void initState() {
+
     _passwordVisible = true;
 
   }
+  @override
   Widget build(BuildContext context) {
 
 
     return Scaffold(
-      backgroundColor: const Color(0xffE5E5E5),
+      backgroundColor: MyColor.white_4,
       body: SingleChildScrollView(
         reverse: true,
         child: Center(
             child: Column(
           children: <Widget>[
-            SizedBox(
+            const SizedBox(
               height: 101,
             ),
-            Logo(),
+            const Logo(),
             const SizedBox(
               height: 91,
             ),
@@ -48,7 +51,7 @@ class _LoginPage extends State<LoginPage> {
             ),
             Container(
               height: 53.0,
-              padding: EdgeInsets.fromLTRB(32, 0, 32, 0),
+              padding: MyPadding.LP,
               child: TextField(
                 controller: nameController,
                 decoration: InputDecoration(
@@ -64,7 +67,7 @@ class _LoginPage extends State<LoginPage> {
             ),
             Container(
               height: 53.0,
-              padding: EdgeInsets.fromLTRB(32, 0, 32, 0),
+              padding: MyPadding.LP,
               child: TextFormField(
                 controller: passController,
                 obscureText: _passwordVisible,
@@ -90,20 +93,15 @@ class _LoginPage extends State<LoginPage> {
             Container(
               height: 53.0,
               width: double.infinity,
-              padding: const EdgeInsets.fromLTRB(32, 0, 32, 0),
+              padding: MyPadding.LP,
               child: ElevatedButton(
-                style: TextButton.styleFrom(
-                    primary: MyColor.white_1,
-                    backgroundColor: MyColor.blue,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    )),
+                style: MyStyle.StyleButton,
                 child: Text(
                   "Sign in",
                   style: MyStyle.stylebutton,
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const HomePage()));
                 },
               ),
             ),

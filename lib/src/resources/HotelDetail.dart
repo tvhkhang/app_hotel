@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/constants/colors.dart';
+import 'package:myapp/src/resources/home_page.dart';
 
 class HotelDetail extends StatefulWidget {
   const HotelDetail({Key? key}) : super(key: key);
@@ -16,7 +17,8 @@ class _HotelDetail extends State<HotelDetail> {
         slivers: <Widget>[
           SliverAppBar(
             leading: IconButton(
-                onPressed: () {},
+                onPressed: () =>{ Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomePage()))},
                 icon: Image.asset(
                   'assets/image/arrow-left.png',
                   height: 24,
